@@ -12,5 +12,23 @@
     <h1>Your Library</h1>
 
     <button id="add-book">Add Book</button>
+
+    <div id="add-book-popup">
+        <h1>Add New Book</h1>
+
+        <form action="" method="POST">
+            <label for="book-title">Book Title:</label>
+            <input type="text" id="book-title" name="book-title">
+
+            <label for="author">Author:</label>
+            <input type="text" id="author" name="author">
+
+            <label for="has-read">Status:</label>
+            <input type="radio" id="read" name="has-read" value="read">
+            <label for="read">Read</label>
+            <input type="radio" id="not-read" name="has-read" value="not-read">
+            <label for="not-read">Not Read</label>
+        </form>
+    </div>
 </body>
 </html>
