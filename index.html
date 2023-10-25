@@ -5,30 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&family=Homemade+Apple&family=Shadows+Into+Light+Two&display=swap" rel="stylesheet">
+
+   
     <link rel="stylesheet" href="app.css">
     <script src="index.js" defer></script>
-</head>
+
+  </head>
 <body>
     <h1>Your Library</h1>
 
     <button id="add-book">Add Book</button>
 
-    <div id="add-book-popup">
-        <h1>Add New Book</h1>
+        <form id="add-book-popup" action="" method="POST">
+            <legend>Your Book</legend>
 
-        <form action="" method="POST">
-            <label for="book-title">Book Title:</label>
-            <input type="text" id="book-title" name="book-title">
+            <div class="input-container">
+                <label for="book-title">Book Title:</label>
+                <input type="text" id="book-title" name="book-title">
+            </div>
 
-            <label for="author">Author:</label>
-            <input type="text" id="author" name="author">
+            <div class="input-container">
+                <label for="author">Author:</label>
+                <input type="text" id="author" name="author">
+            </div>
 
-            <label for="has-read">Status:</label>
-            <input type="radio" id="read" name="has-read" value="read">
-            <label for="read">Read</label>
-            <input type="radio" id="not-read" name="has-read" value="not-read">
-            <label for="not-read">Not Read</label>
+            <div class="input-container">
+                <label for="has-read">Status:</label>
+                <div class="radio-inputs">
+                    <div class="radio-input">
+                        <input type="radio" id="read" name="has-read" value="read">
+                        <label for="read">Read</label>
+                    </div>
+                    <div class="radio-input">
+                        <input type="radio" id="not-read" name="has-read" value="not-read">
+                        <label for="not-read">Not Read</label>
+                    </div>
+                </div>
+            </div>
+            <button class="submit">Add</button>
         </form>
-    </div>
 </body>
 </html>

@@ -1,0 +1,72 @@
+/* font-family: 'Comic Neue', cursive;
+font-family: 'Homemade Apple', cursive;
+font-family: 'Shadows Into Light Two', cursive; */
+
+html {
+    /* background-color:  #FFC2C3; */
+    background-color: #E6CBDD;
+    color: #faf8f4;
+    font-family: sans-serif;
+}
+
+h1 {
+    font-family: 'Comic Neue';
+    font-size: 3rem;
+    margin: 0;
+}
+
+#add-book-popup {
+    background-color: #faf8f4;
+    color: #343333;
+    border-radius: 10px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    margin: 0;
+    padding: 40px;
+    padding-top: 20px;
+    width: 350px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+#add-book-popup legend {
+    font-family: 'Comic Neue', sans-serif;
+    font-size: 2rem;
+    position: relative;
+    right: 20px;
+}
+
+.input-container {
+    font-size: 1.2rem;
+    font-weight: 300;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.input-container input[type="text"] {
+    border: 1px solid #343333;
+    border-radius: 8px;
+    height: 30px;
+    padding: 0px 10px;
+    font-size: 1rem;
+}
+
+.radio-inputs {
+    display: flex;
+    gap: 20px;
+}
+
+.submit {
+    width: 200px;
+    height: 40px;
+    /* border: 1px solid #343333; */
+    border: none;
+    border-radius: 8px;
+    background-color: #E6CBDD;
+    font-size: 1rem;
+    font-weight: 100;
+    align-self: center;
+    margin-top: 10px;
+}
