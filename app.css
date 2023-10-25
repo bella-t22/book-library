@@ -4,15 +4,43 @@ font-family: 'Shadows Into Light Two', cursive; */
 
 html {
     /* background-color:  #FFC2C3; */
-    background-color: #E6CBDD;
+    background-color: #faf8f4;
     color: #faf8f4;
     font-family: sans-serif;
 }
 
-h1 {
-    font-family: 'Comic Neue';
-    font-size: 3rem;
+html, body {
     margin: 0;
+    padding: 0;
+}
+
+header {
+    color: #E6CBDD;
+    background-color: #343333;
+    margin: 0;
+    padding: 20px 50px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3rem;
+    font-weight: 300;
+}
+
+#add-book-btn {
+    background-color: #faf8f4;
+    color:#343333;
+    border: none;
+    border-radius: 8px;
+    width: 120px;
+    height: 40px;
+    font-size: 1rem;
 }
 
 #add-book-popup {
