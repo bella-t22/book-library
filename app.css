@@ -103,3 +103,47 @@ header h1 {
     align-self: center;
     margin-top: 10px;
 }
+
+main {
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+}
+
+.card {
+    border: 2px solid #E6CBDD;
+    border-radius: 8px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    background-color: #E6CBDD;
+    color:#343333;
+    width: 300px;
+    height: 150px;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card .title-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.card h2 {
+    font-style: italic;
+    font-weight: 500;
+    margin: 0;
+    padding: 0;
+}
+
+.card .author {
+    text-align: center;
+    margin: 0;
+}
+
+.has-read {
+    font-weight: 600;
+}
