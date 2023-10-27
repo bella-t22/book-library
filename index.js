@@ -1,9 +1,17 @@
 const myLibrary = [];
-const newBook = document.getElementById('add-book');
+const newBookBtn = document.getElementById('add-book-btn');
+const popUpForm = document.querySelector('.add-book-popup');
+const overlay = document.querySelector('.overlay');
 
-newBook.addEventListener('click', () => {
-    
+newBookBtn.addEventListener('click', () => {
+    popUpForm.classList.remove('hidden');
+    overlay.classList.remove('hidden');
 })
+
+overlay.addEventListener('click', () => {
+    popUpForm.classList.add('hidden');
+    overlay.classList.add('hidden');
+}) 
 
 // add object constructor for book creation
 function Book(title, author, hasRead) {
@@ -13,6 +21,6 @@ function Book(title, author, hasRead) {
 }
 
 // write function to loop through and display each book in the array on the page
-function addBookToLibrary(newBook) {
-    return myLibrary.push(newBook);
+function addBookToLibrary(title, author, hasRead) {
+    // const newBook = new Book()
 }

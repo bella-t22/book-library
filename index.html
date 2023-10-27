@@ -15,53 +15,51 @@
 
   </head>
 <body>
-    <header>
-        <h1>Your Library</h1>
-        <button id="add-book-btn">Add Book</button>
-    </header>
-
-    <form id="add-book-popup" action="" method="POST">
-        <legend>Your Book</legend>
-        <div class="input-container">
-            <label for="book-title">Book Title:</label>
-            <input type="text" id="book-title" name="book-title">
-        </div>
-        <div class="input-container">
-            <label for="author">Author:</label>
-            <input type="text" id="author" name="author">
-        </div>
-        <div class="input-container">
-            <label for="has-read">Status:</label>
-            <div class="radio-inputs">
-                <div class="radio-input">
-                    <input type="radio" id="read" name="has-read" value="read">
-                    <label for="read">Read</label>
-                </div>
-                <div class="radio-input">
-                    <input type="radio" id="not-read" name="has-read" value="not-read">
-                    <label for="not-read">Not Read</label>
+        <header>
+            <h1>Your Library</h1>
+            <button id="add-book-btn">Add Book</button>
+        </header>
+        <form class="add-book-popup hidden" action="" method="POST">
+            <legend>Your Book</legend>
+            <div class="input-container">
+                <label for="book-title">Book Title:</label>
+                <input type="text" id="book-title" name="book-title">
+            </div>
+            <div class="input-container">
+                <label for="author">Author:</label>
+                <input type="text" id="author" name="author">
+            </div>
+            <div class="input-container">
+                <label for="has-read">Status:</label>
+                <div class="radio-inputs">
+                    <div class="radio-input">
+                        <input type="radio" id="read" name="has-read" value="read">
+                        <label for="read">Read</label>
+                    </div>
+                    <div class="radio-input">
+                        <input type="radio" id="not-read" name="has-read" value="not-read">
+                        <label for="not-read">Not Read</label>
+                    </div>
                 </div>
             </div>
-        </div>
-        <button class="submit">Add</button>
-    </form>
-
-    <main>
-        <div class="card">
+            <button class="submit">Add</button>
+        </form>
+        <main>
+            <div class="card">
+                    <div class="title-container">
+                        <h2>Daisy Jones & The Six</h2>
+                        <p class="author">by Taylor Jenkins Reed</p>
+                    </div>
+                <p class="has-read">Read</p>
+            </div>
+            <div class="card">
                 <div class="title-container">
-                    <h2>Daisy Jones & The Six</h2>
-                    <p class="author">by Taylor Jenkins Reed</p>
+                    <h2>The Book Thief</h2>
+                    <p class="author">by Markus Zusak</p>
                 </div>
-            <p class="has-read">Read</p>
-        </div>
-
-        <div class="card">
-            <div class="title-container">
-                <h2>The Book Thief</h2>
-                <p class="author">by Markus Zusak</p>
+                <p class="has-read">Not Read</p>
             </div>
-            <p class="has-read">Not Read</p>
-        </div>
-    </main>
+        </main>
+    <div class="overlay hidden"></div>
 </body>
 </html>
