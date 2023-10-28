@@ -2,10 +2,11 @@ const myLibrary = [];
 const newBookBtn = document.getElementById('add-book-btn');
 const popUpForm = document.querySelector('.add-book-popup');
 const overlay = document.querySelector('.overlay');
-// const submitBtn = document.querySelector('.submit');
+const submitBtn = document.querySelector('.submit');
 const bookTitle = document.getElementById('book-title');
 const author = document.getElementById('author');
 const radioBtns = document.querySelectorAll('input[name="has-read"]');
+const main = document.querySelector('main');
 
 let checkedRadioBtn;
 function checkedRadio(radioBtns) {
@@ -33,6 +34,11 @@ popUpForm.addEventListener('submit', (e) => {
     addBookToLibrary(newBook);
 })
 
+submitBtn.addEventListener('click', () => {
+    popUpForm.classList.add('hidden');
+    overlay.classList.add('hidden');
+})
+
 function Book(title, author, hasRead) {
     this.title = title;
     this.author = author;
@@ -40,7 +46,26 @@ function Book(title, author, hasRead) {
 }
 
 function addBookToLibrary(newBook) {
-    console.log(newBook);
     myLibrary.push(newBook);
-    console.log(myLibrary);
+
+        const newCard = document.createElement('div');
+        newCard.classList.add('card');
+        main.appendChild(newCard);
+        const titleContainer = document.createElement('div');
+        titleContainer.classList.add('title-container');
+        newCard.appendChild(titleContainer);
+        const title = document.createElement('h2');
+        title.textContent = newBook.title;
+        titleContainer.appendChild(title);
+        const author = document.createElement('p');
+        author.classList.add('author');
+        author.textContent = `by ${newBook.author}`;
+        titleContainer.appendChild(author);
+        const hasRead = document.createElement('p');
+        hasRead.classList.add('has-read');
+        hasRead.textContent = newBook.hasRead;
+        newCard.appendChild(hasRead);
+        console.log(newCard);
+
+        return;
 }
