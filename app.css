@@ -88,6 +88,10 @@ header h1 {
     font-size: 1rem;
 }
 
+.input-container p {
+    margin: 0;
+}
+
 .radio-inputs {
     display: flex;
     gap: 20px;
