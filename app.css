@@ -113,6 +113,7 @@ header h1 {
 main {
     padding: 20px;
     display: flex;
+    flex-wrap: wrap;
     gap: 20px;
 }
 
@@ -123,13 +124,14 @@ main {
     background-color: #E6CBDD;
     color:#343333;
     width: 300px;
-    height: 150px;
+    height: 200px;
     padding: 20px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    flex: 1, 0, auto;
 }
 
 .card .title-container {
@@ -152,6 +154,17 @@ main {
 
 .has-read {
     font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.card .delete {
+    border: none;
+    background-color: #343333;
+    color: #faf8f4;
+    font-size: .9rem;
+    border-radius: 8px;
+    width: 100px;
+    height: 30px;
 }
 
 .overlay {

@@ -1,4 +1,15 @@
-const myLibrary = [];
+const myLibrary = [
+    {
+        title: 'Daisy Jones & The Six',
+        author: 'Taylor Jenkins Reid',
+        hasRead: 'Read'
+    },
+    {
+        title: 'The Book Thief',
+        author: 'Markus Zusak',
+        hasRead: 'Read'
+    }
+];
 const newBookBtn = document.getElementById('add-book-btn');
 const popUpForm = document.querySelector('.add-book-popup');
 const overlay = document.querySelector('.overlay');
@@ -45,27 +56,54 @@ function Book(title, author, hasRead) {
     this.hasRead = hasRead;
 }
 
+function createCard(newBook) {
+    const newCard = document.createElement('div');
+    newCard.classList.add('card');
+    main.appendChild(newCard);
+    const titleContainer = document.createElement('div');
+    titleContainer.classList.add('title-container');
+    newCard.appendChild(titleContainer);
+    const title = document.createElement('h2');
+    title.textContent = newBook.title;
+    titleContainer.appendChild(title);
+    const author = document.createElement('p');
+    author.classList.add('author');
+    author.textContent = `by ${newBook.author}`;
+    titleContainer.appendChild(author);
+    const hasRead = document.createElement('p');
+    hasRead.classList.add('has-read');
+    hasRead.textContent = newBook.hasRead;
+    newCard.appendChild(hasRead);
+    const deleteBtn = document.createElement('button');
+    deleteBtn.classList.add('delete');
+    deleteBtn.textContent = 'Delete';
+    newCard.appendChild(deleteBtn);
+
+    deleteBtn.addEventListener('click', () => {
+        deleteBook(title.textContent, newCard);
+    })
+}
+
 function addBookToLibrary(newBook) {
     myLibrary.push(newBook);
-
-        const newCard = document.createElement('div');
-        newCard.classList.add('card');
-        main.appendChild(newCard);
-        const titleContainer = document.createElement('div');
-        titleContainer.classList.add('title-container');
-        newCard.appendChild(titleContainer);
-        const title = document.createElement('h2');
-        title.textContent = newBook.title;
-        titleContainer.appendChild(title);
-        const author = document.createElement('p');
-        author.classList.add('author');
-        author.textContent = `by ${newBook.author}`;
-        titleContainer.appendChild(author);
-        const hasRead = document.createElement('p');
-        hasRead.classList.add('has-read');
-        hasRead.textContent = newBook.hasRead;
-        newCard.appendChild(hasRead);
-        console.log(newCard);
-
-        return;
+    createCard(newBook);
 }
+
+function deleteBook(name, card) {
+    myLibrary.forEach((book) => {
+        if (book.title == name) {
+            const firstIndex = myLibrary.indexOf(book);
+            myLibrary.splice(firstIndex, 1);
+            
+            while (card.hasChildNodes()) {
+                card.removeChild(card.firstChild);
+            }
+            card.remove();  
+            return;
+        }
+    })
+}
+
+myLibrary.forEach((newBook) => {
+    createCard(newBook);
+})
