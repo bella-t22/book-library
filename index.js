@@ -70,10 +70,16 @@ function createCard(newBook) {
     author.classList.add('author');
     author.textContent = `by ${newBook.author}`;
     titleContainer.appendChild(author);
+    const changeRead = document.createElement('div');
+    changeRead.classList.add('change-read');
+    newCard.appendChild(changeRead);
     const hasRead = document.createElement('p');
     hasRead.classList.add('has-read');
     hasRead.textContent = newBook.hasRead;
-    newCard.appendChild(hasRead);
+    changeRead.appendChild(hasRead);
+    const icon = document.createElement('img');
+    icon.src = 'icons/edit_FILL0_wght400_GRAD0_opsz24.svg';
+    changeRead.appendChild(icon);
     const deleteBtn = document.createElement('button');
     deleteBtn.classList.add('delete');
     deleteBtn.textContent = 'Delete';
@@ -81,6 +87,14 @@ function createCard(newBook) {
 
     deleteBtn.addEventListener('click', () => {
         deleteBook(title.textContent, newCard);
+    })
+
+    icon.addEventListener('click', () => {
+        if (hasRead.textContent == 'Read') {
+            return hasRead.textContent = 'Not Read';
+        } else if (hasRead.textContent == 'Not Read') {
+            return hasRead.textContent = 'Read';
+        }
     })
 }
 

@@ -152,6 +152,12 @@ main {
     margin: 0;
 }
 
+.change-read {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
 .has-read {
     font-weight: 600;
     font-size: 1.2rem;
