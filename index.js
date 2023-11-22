@@ -50,10 +50,12 @@ submitBtn.addEventListener('click', () => {
     overlay.classList.add('hidden');
 })
 
-function Book(title, author, hasRead) {
-    this.title = title;
-    this.author = author;
-    this.hasRead = hasRead;
+class Book {
+    constructor(title, author, hasRead) {
+        this.title = title;
+        this.author = author;
+        this.hasRead = hasRead;
+    }
 }
 
 function createCard(newBook) {
@@ -91,8 +93,11 @@ function createCard(newBook) {
 
     icon.addEventListener('click', () => {
         if (hasRead.textContent == 'Read') {
+            newBook.hasRead = 'Not Read';
+            console.log(newBook.hasRead);
             return hasRead.textContent = 'Not Read';
         } else if (hasRead.textContent == 'Not Read') {
+            newBook.hasRead = 'Read';
             return hasRead.textContent = 'Read';
         }
     })
