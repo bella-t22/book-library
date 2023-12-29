@@ -45,11 +45,6 @@ popUpForm.addEventListener('submit', (e) => {
     addBookToLibrary(newBook);
 })
 
-submitBtn.addEventListener('click', () => {
-    popUpForm.classList.add('hidden');
-    overlay.classList.add('hidden');
-})
-
 class Book {
     constructor(title, author, hasRead) {
         this.title = title;
@@ -106,6 +101,8 @@ function createCard(newBook) {
 function addBookToLibrary(newBook) {
     myLibrary.push(newBook);
     createCard(newBook);
+    popUpForm.classList.add('hidden');
+    overlay.classList.add('hidden');
 }
 
 function deleteBook(name, card) {
